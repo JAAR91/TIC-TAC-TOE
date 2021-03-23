@@ -1,2 +1,3 @@
-#!/usr/bin/env ruby#!/usr/bin/env rub
-puts "Hello! "
+#!/usr/bin/env ruby
+
+puts 'Hello world!'
