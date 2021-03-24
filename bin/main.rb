@@ -42,7 +42,7 @@ def menu_checker(menu_input)
   while checker == false
     puts 'Please enter only numbers'
     menu_input = gets.chomp.to_i
-    checker = true if !menu_input.nil? && menu_input.class == Integer && menu_input.positive? && menu_input < 5
+    checker = true if !menu_input.nil? && menu_input.is_a?(Integer) && menu_input.positive? && menu_input < 5
   end
   menu_input
 end
