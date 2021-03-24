@@ -26,11 +26,11 @@ def menu
   puts '2.- Instructions'
   puts '3.- Credits'
   puts '4.- Exit'
-  gets.chomp.to_i
+  menu_checker(gets.chomp)
 end
 
 def player_name_check(input)
-  while input.nil?
+  while input.nil? || input.length.zero?
     puts 'Please enter a valid name, empty value not accepted'
     input = gets.chomp
   end
@@ -42,7 +42,7 @@ def menu_checker(menu_input)
   while checker == false
     puts 'Please enter only numbers'
     menu_input = gets.chomp.to_i
-    checker = true if menu_input.nil? && menu_input.instance_of?('Integer') && menu_input.positive? && menu_input < 5
+    checker = true if !menu_input.nil? && menu_input.class == Integer && menu_input.positive? && menu_input < 5
   end
   menu_input
 end
@@ -76,12 +76,14 @@ def game_instructions
   # game instrucctions will show up here
   jaarix('Game instructions are under development please wait....')
   puts 'Press enter to go back to the menu'
+  gets
 end
 
 def game_credits
   # game credits will show up here
   jaarix('Game Credits are under development please wait....')
   puts 'Press enter to go back to the menu'
+  gets
 end
 
 def print_game
