@@ -29,15 +29,33 @@ def menu
   gets.chomp.to_i
 end
 
+def player_name_check(input)
+  while input.nil?
+    puts 'Please enter a valid name, empty value not accepted'
+    input = gets.chomp
+  end
+  input
+end
+
+def menu_checker(menu_input)
+  checker = false
+  while checker == false
+    puts 'Please enter only numbers'
+    menu_input = gets.chomp.to_i
+    checker = true if menu_input.nil? && menu_input.instance_of?('Integer') && menu_input.positive? && menu_input < 5
+  end
+  menu_input
+end
+
 def game_start
   jaarix('Please enter your name Player one?:')
-  first_player = gets.chomp
+  first_player = player_name_check(gets.chomp)
   first_player.capitalize!
 
   second_player = ''
   game_info(first_player, second_player)
   jaarix('Please enter your name Player Two?:')
-  second_player = gets.chomp
+  second_player = player_name_check(gets.chomp)
   second_player.capitalize!
 
   game_info(first_player, second_player)
