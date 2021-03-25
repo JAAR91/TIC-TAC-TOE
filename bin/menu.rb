@@ -2,14 +2,18 @@ require_relative 'displayprint.rb'
 require_relative 'game.rb'
 require_relative 'gamerules.rb'
 require_relative 'credits.rb'
+require_relative 'inputchecker.rb'
 
 class Menu
+
+  public
   def game_menu
     display = Display.new
     display.display_clear
     display.jaarix('This the game menu please choose an option')
     menu_text
-    asw = number_checker(gets.chomp.to_i, 1, 4)
+    input_checker = Inputchecker.new
+    asw = input_checker.number_checker(gets.chomp.to_i, 1, 4)
     case asw
     when 1
       call_game
@@ -34,6 +38,14 @@ class Menu
     puts '+------------------------------------+'
   end
 
+  def player_name_check(input)
+    while input.nil? || input.length.zero?
+      puts 'Please enter a valid name, empty value not accepted'
+      input = gets.chomp
+    end
+    input
+  end
+
   def call_game
     display = Display.new
     display.display_clear
@@ -44,26 +56,11 @@ class Menu
     puts '+----------------------------------------------+'
     puts 'Player Number two please enter your name :'
     player_two = player_name_check(gets.chomp)
-    puts player_one + player_two
-    gets
+    game = Game.new(player_one, player_two)
+    game.take_turns
   end
 
-  def player_name_check(input)
-    while input.nil? || input.length.zero?
-      puts 'Please enter a valid name, empty value not accepted'
-      input = gets.chomp
-    end
-    input
-  end
-
-  def number_checker(menu_input, initial, last)
-    until !menu_input.nil? && menu_input.is_a?(Integer) && menu_input >= initial && menu_input <= last
-      print "Please enter only numbers beetwen #{initial} and #{last} please!! :"
-      menu_input = gets.chomp.to_i
-    end
-    menu_input
-  end
-
+  private
   def end_game
     display = Display.new
     display.display_clear
