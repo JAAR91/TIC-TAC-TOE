@@ -1,6 +1,7 @@
 require_relative 'displayprint.rb'
 require_relative 'game.rb'
 require_relative 'gamerules.rb'
+require_relative 'credits.rb'
 
 class Menu
   def game_menu
@@ -16,7 +17,8 @@ class Menu
       game_rules = Gamerules.new
       game_rules.show_game_rules
     when 3
-
+      credits = Credits.new
+      credits.display_credits 
     when 4
       end_game
     end
