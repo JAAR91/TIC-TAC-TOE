@@ -12,6 +12,10 @@ class Display
               ['+---+---+---+']]
   end
 
+  def just_board
+    @array
+  end
+
   def jaarix(input)
     array = [' (°v°)  ', '/|-=-|\ ', '( _=_ ) ', ' ^^ ^^']
     m_line = []
@@ -31,8 +35,13 @@ class Display
     puts array[3]
   end
 
-  def board_print(array = nil)
-    array = @array if array.nil?
+  def board_print(arrayboard = nil)
+    array = if arrayboard.nil?
+              @array
+            else
+              transform_array(arrayboard)
+            end
+
     puts ''
     puts array[0]
     array[1].each { |item| print item }
@@ -45,6 +54,22 @@ class Display
     puts ''
     puts array[6]
     puts ''
+  end
+
+  def transform_array(array)
+    board_new = @array
+
+    board_new[1][1] = array[0]
+    board_new[1][3] = array[1]
+    board_new[1][5] = array[2]
+    board_new[3][1] = array[3]
+    board_new[3][3] = array[4]
+    board_new[3][5] = array[5]
+    board_new[5][1] = array[6]
+    board_new[5][3] = array[7]
+    board_new[5][5] = array[8]
+
+    board_new
   end
 
   def display_clear

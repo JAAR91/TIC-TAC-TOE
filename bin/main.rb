@@ -8,7 +8,8 @@ def start_screen()
   display.board_print
 
   puts 'Press enter to conitnue...'
-  gets
+  gets.chomp
+
   menu = Menu.new
   menu.game_menu
 end

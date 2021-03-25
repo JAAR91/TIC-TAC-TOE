@@ -17,7 +17,7 @@ def start_screen
       jaarix('Good Bye!')
     end
   end
-  end
+end
 
 def menu
   # main menu, this let you choose wich option of the game you want to see
