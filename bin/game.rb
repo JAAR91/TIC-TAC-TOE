@@ -1,11 +1,18 @@
 require_relative 'menu.rb'
 
-module Game
+module Play_Game
+
+    class Game
 
     def initialize
-        @first_player = nil
-        @second_player = nil
-        @get_current_player = nil
+        @first_player = 
+        @second_player = 
+        @get_current_player = []
+        @board = 
+    end
+
+    def take_turns(player_turn)
+        
     end
  
 end
