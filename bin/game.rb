@@ -8,7 +8,7 @@ module Play_Game
         @first_player = first_player 
         @second_player = second_player
         @get_current_player = []
-        @board = board
+        @board = 
     end
 
     def take_turns(player_turn)
