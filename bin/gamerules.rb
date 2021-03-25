@@ -1,4 +1,5 @@
 require_relative 'displayprint.rb'
+require_relative 'menu.rb'
 
 class Gamerules
   def initialize
@@ -16,6 +17,8 @@ class Gamerules
     win_3
     win_4
     tie_game
+    menu = Menu.new
+    menu.game_menu
   end
 
   def rules
