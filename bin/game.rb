@@ -5,15 +5,18 @@ module Play_Game
     class Game
 
     def initialize
-        @first_player = 
-        @second_player = 
+        @first_player = first_player 
+        @second_player = second_player
         @get_current_player = []
-        @board = 
+        @board = board
     end
 
     def take_turns(player_turn)
         player_turn = turn.new
-        take_turns.display_clear
+        player_turns.display_clear
+        while #do a while loop to repeat the turns 
+            if #should handle wrong input 
+        end
         puts '+----------------------------------------------+'
         puts 'It is #{first_player} turn:'
         first_player = first_player(gets.chomp)
@@ -60,5 +63,9 @@ module Play_Game
     def  input_value_move
 
     end
-    
+
+    def end_game
+        
+    end
+
 end
