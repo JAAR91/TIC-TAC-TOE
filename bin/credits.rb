@@ -1,4 +1,4 @@
-require_relative 'menu.rb'
+require_relative 'menu'
 
 class Credits
   def display_credits

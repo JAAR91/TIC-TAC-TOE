@@ -1,9 +1,8 @@
-require_relative 'menu.rb'
-require_relative 'displayprint.rb'
-require_relative 'inputchecker.rb'
+require_relative 'menu'
+require_relative 'displayprint'
+require_relative 'inputchecker'
 
 class Game
-
   def initialize(player1, player2)
     @first_player = player1
     @second_player = player2
@@ -43,7 +42,8 @@ class Game
       @display.jaarix('Its a tie, booo no one won!!!!!')
     end
     puts 'Dou you to start a new game?(Y/N):'
-    answ = gets.chomp
+    input_checker = Inputchecker.new
+    answ = input_checker.new_game?(gets.chomp.upcase)
     menu = Menu.new
     case answ
     when 'Y'
@@ -54,11 +54,11 @@ class Game
   end
 
   def game_ended?
-    if @current_player == @first_player
-      game = 1
-    else
-      game = 2
-    end
+    game = if @current_player == @first_player
+             1
+           else
+             2
+           end
     return game if @board[0] == @board[1] && @board[1] == @board[2]
     return game if @board[3] == @board[4] && @board[4] == @board[5]
     return game if @board[6] == @board[7] && @board[7] == @board[8]
@@ -68,13 +68,13 @@ class Game
     return game if @board[0] == @board[5] && @board[5] == @board[9]
     return game if @board[2] == @board[2] && @board[2] == @board[7]
 
-    return 3 if !@board.any?(Integer)
+    return 3 if @board.none?(Integer)
 
-    return 0
+    0
   end
 
   def player_turns_done(asnw, symbol)
-    while !@board.any?(asnw)
+    while @board.none?(asnw)
       puts 'The location selected is not available, please select another one:'
       input_checker = Inputchecker.new
       asnw = input_checker.number_checker(gets.chomp.to_i, 1, 9)

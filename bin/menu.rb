@@ -1,12 +1,10 @@
-require_relative 'displayprint.rb'
-require_relative 'game.rb'
-require_relative 'gamerules.rb'
-require_relative 'credits.rb'
-require_relative 'inputchecker.rb'
+require_relative 'displayprint'
+require_relative 'game'
+require_relative 'gamerules'
+require_relative 'credits'
+require_relative 'inputchecker'
 
 class Menu
-
-  public
   def game_menu
     display = Display.new
     display.display_clear
@@ -22,7 +20,7 @@ class Menu
       game_rules.show_game_rules
     when 3
       credits = Credits.new
-      credits.display_credits 
+      credits.display_credits
     when 4
       end_game
     end
@@ -38,29 +36,24 @@ class Menu
     puts '+------------------------------------+'
   end
 
-  def player_name_check(input)
-    while input.nil? || input.length.zero?
-      puts 'Please enter a valid name, empty value not accepted'
-      input = gets.chomp
-    end
-    input
-  end
-
   def call_game
     display = Display.new
     display.display_clear
     display.jaarix('Lets Get Started!!')
     puts '+----------------------------------------------+'
     puts 'Player Number one please enter your name :'
-    player_one = player_name_check(gets.chomp)
+    input_checker = Inputchecker.new
+    player_one = inputchecker.player_name_check(gets.chomp)
     puts '+----------------------------------------------+'
     puts 'Player Number two please enter your name :'
-    player_two = player_name_check(gets.chomp)
+    player_two = inputchecker.player_name_check(gets.chomp)
+
     game = Game.new(player_one, player_two)
     game.take_turns
   end
 
   private
+
   def end_game
     display = Display.new
     display.display_clear

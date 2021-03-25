@@ -1,5 +1,5 @@
-require_relative 'displayprint.rb'
-require_relative 'menu.rb'
+require_relative 'displayprint'
+require_relative 'menu'
 
 class Gamerules
   def initialize
