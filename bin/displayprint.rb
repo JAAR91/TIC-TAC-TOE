@@ -78,8 +78,6 @@ class Display
       system('clr')
     when /linux|arch/i
       system('clear')
-    when /darwin/i
-      system('clear')
     end
   end
 end
