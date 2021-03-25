@@ -1,6 +1,6 @@
-require_relative 'displayprint.rb'
-require_relative 'game.rb'
-require_relative 'menu.rb'
+require_relative 'displayprint'
+require_relative 'game'
+require_relative 'menu'
 
 def start_screen()
   display = Display.new

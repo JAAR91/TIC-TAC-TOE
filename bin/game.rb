@@ -1,8 +1,8 @@
 # rubocop: disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
 
-require_relative 'menu.rb'
-require_relative 'displayprint.rb'
-require_relative 'inputchecker.rb'
+require_relative 'menu'
+require_relative 'displayprint'
+require_relative 'inputchecker'
 
 class Game
   def initialize(player1, player2)
