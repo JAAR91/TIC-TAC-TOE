@@ -42,7 +42,7 @@ class Menu
     display.jaarix('Lets Get Started!!')
     puts '+----------------------------------------------+'
     puts 'Player Number one please enter your name :'
-    input_checker = Inputchecker.new
+    inputchecker = Inputchecker.new
     player_one = inputchecker.player_name_check(gets.chomp)
     puts '+----------------------------------------------+'
     puts 'Player Number two please enter your name :'

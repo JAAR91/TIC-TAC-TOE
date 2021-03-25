@@ -1,6 +1,8 @@
-require_relative 'menu'
-require_relative 'displayprint'
-require_relative 'inputchecker'
+# rubocop: disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
+
+require_relative 'menu.rb'
+require_relative 'displayprint.rb'
+require_relative 'inputchecker.rb'
 
 class Game
   def initialize(player1, player2)
@@ -25,13 +27,30 @@ class Game
       input_checker = Inputchecker.new
       player_asw = input_checker.number_checker(gets.chomp.to_i, 1, 9)
       player_turns_done(player_asw, @symbol)
-      next_player
       game = game_ended?
+      next_player if game.zero?
     end
-    end_game(game)
+    end_game_message(game)
+    end_game
   end
 
-  def end_game(game)
+  def end_game
+    @display.board_print(@board)
+    puts 'Dou you want to start a new game?(Y/N):'
+    puts '1. Yes'
+    puts '2. No'
+    input_checker = Inputchecker.new
+    answ = input_checker.number_checker(gets.chomp.to_i, 1, 2)
+    menu = Menu.new
+    case answ
+    when 1
+      menu.call_game
+    when 2
+      menu.game_menu
+    end
+  end
+
+  def end_game_message(game)
     @display.display_clear
     case game
     when 1
@@ -40,16 +59,6 @@ class Game
       @display.jaarix("Congratulations player #{@second_player} you are super!!!!!")
     when 3
       @display.jaarix('Its a tie, booo no one won!!!!!')
-    end
-    puts 'Dou you to start a new game?(Y/N):'
-    input_checker = Inputchecker.new
-    answ = input_checker.new_game?(gets.chomp.upcase)
-    menu = Menu.new
-    case answ
-    when 'Y'
-      menu.call_game
-    when 'N'
-      menu.game_menu
     end
   end
 
@@ -65,8 +74,8 @@ class Game
     return game if @board[0] == @board[3] && @board[3] == @board[6]
     return game if @board[1] == @board[4] && @board[4] == @board[7]
     return game if @board[2] == @board[5] && @board[5] == @board[8]
-    return game if @board[0] == @board[5] && @board[5] == @board[9]
-    return game if @board[2] == @board[2] && @board[2] == @board[7]
+    return game if @board[0] == @board[4] && @board[4] == @board[8]
+    return game if @board[2] == @board[4] && @board[4] == @board[6]
 
     return 3 if @board.none?(Integer)
 
@@ -92,3 +101,5 @@ class Game
     end
   end
 end
+
+# rubocop: enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity

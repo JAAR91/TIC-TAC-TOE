@@ -14,12 +14,4 @@ class Inputchecker
     end
     input
   end
-
-  def new_game?(input)
-    while input..nil? || input.length.zero? || input != 'Y' || input != 'N'
-      puts 'Please enter a valid Answer (Y/N)!'
-      input = gets.chomp.upcase
-    end
-    input
-  end
 end
