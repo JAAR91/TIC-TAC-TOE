@@ -24,31 +24,41 @@ module Play_Game
         puts 'Please select any valid spot or cell on the board to play'
       end
 
-      def game_turn_checker()
-        game_turn_checker = false
-        while game_turn_checker == false
-          print "Please enter only numbers beetwen #{initial} and #{last} please!! :"
-          game_turn_checker = true if
+
+      def game_turn_checker(item, symbol)
+       @game_turn_checker_array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        #create an any method 
+        @game_turn_checker _array.each_with_index do | item, index|
+            if index + 1 == input
+        @game_turn_checker_array = []
+            end
         end
+          print # first_player choosed spot 2
       end
     
-    
+
+      def player_turns
+        @get_current_player = first_player
+        until #when board is completed for the rounds
+          take_turns(get_current_player)
+          break if #when board is completed for the rounds
+          @get_current_player = next_player
+        end
+
+
+        def next_player
+            if get_current_player == first_player
+              second_player
+            else
+              first_player
+            end
+          end
+
+       
+    end 
+
+    def  input_value_move
+
     end
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#create  A WHILE TO CHANGE B/W player one and two
+    
+end
