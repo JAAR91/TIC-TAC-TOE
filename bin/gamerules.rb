@@ -12,11 +12,11 @@ class Gamerules
     puts 'Press enter to continue....'
     gets
     rules
-    win_1
-    win_2
-    win_3
-    win_4
-    tie_game
+    win_one
+    win_two
+    win_three
+    win_four
+    tie_five
     menu = Menu.new
     menu.game_menu
   end
@@ -28,7 +28,7 @@ class Gamerules
     gets
   end
 
-  def win_1
+  def win_one
     @display.display_clear
     puts 'Page 1 of 5'
     @display.jaarix('You can win by having a line of 3 O/X like below!')
@@ -38,7 +38,7 @@ class Gamerules
     gets
   end
 
-  def win_2
+  def win_two
     @display.display_clear
     puts 'Page 2 of 5'
     @display.jaarix('The lines can be horizontal!')
@@ -49,7 +49,7 @@ class Gamerules
     gets
   end
 
-  def win_3
+  def win_three
     @display.display_clear
     puts 'Page 3 of 5'
     @display.jaarix('Or can be vertical!')
@@ -60,7 +60,7 @@ class Gamerules
     gets
   end
 
-  def win_4
+  def win_four
     @display.display_clear
     puts 'Page 4 of 5'
     @display.jaarix('You can even win if you manage do one diagonal!')
@@ -70,7 +70,7 @@ class Gamerules
     gets
   end
 
-  def tie_game
+  def tie_five
     @display.display_clear
     puts 'Page 5 of 5'
     @display.jaarix('If no one can complete a line of 3 is a tie!')
