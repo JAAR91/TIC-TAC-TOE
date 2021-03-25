@@ -16,7 +16,7 @@ class Menu
     asw = number_checker(gets.chomp, 1, 4)
     case asw
     when 1
-      # call game method here
+      call_game
     when 2
 
     when 3
@@ -31,8 +31,10 @@ class Menu
     display.jaarix('Lets Get Started!!')
     puts '+----------------------------------------------+'
     puts 'Player Number one please enter your name :'
-    print 'A:'
     player_one = player_name_check(gets.chomp)
+    puts '+----------------------------------------------+'
+    puts 'Player Number two please enter your name :'
+    player_two = player_name_check(gets.chomp)
   end
 
   def player_name_check(input)
