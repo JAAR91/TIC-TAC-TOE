@@ -148,14 +148,13 @@ def take_turns
     puts 'Please select any valid spot or cell on the board to play'
     player_asw = number_checker(gets.chomp.to_i, 1, 9)
     player_turns_done(player_asw, @game_logic.p_symbol)
-    
+
     game = @game_logic.game_ended?
     @game_logic.next_player if game.zero?
   end
   end_game_message(game)
   end_game?
 end
-
 
 def end_game_message(game)
   display = Display.new
