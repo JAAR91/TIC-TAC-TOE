@@ -61,7 +61,7 @@ end
 def rules
   display = Display.new
   display.display_clear
-  jaarix('The game consist on 2 players switching turn and marking a place on a 3x3 board!')
+  jaarix('The game consist of 2 players switching turn and marking a place on a 3x3 board!')
   puts 'Press enter to continue.....'
   gets
 end
