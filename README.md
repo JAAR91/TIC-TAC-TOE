@@ -39,6 +39,9 @@ These are the rules to play the Tic-Tac-Toe👋🤓
                                          +---+---+---+
 
 You are X, your friend  is O. The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner. You can win by having a line of  3 O/X. The lines can be horizontal, vertical or diagonal in both opposite directions. You can only win if you manage to have O or X cutting across equally either diagonally, horizonatally or vertically, but if  no one can complete a line of 3 O/X THEN it's a tie. When all 9 squares are full, the game is over
+
+<img src="lib/jarix.gif" style="width: 150%;">
+
 ```
 
 ## How to Start the Game
