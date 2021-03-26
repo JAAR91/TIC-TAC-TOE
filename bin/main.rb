@@ -159,13 +159,10 @@ end
 def end_game_message(game)
   display = Display.new
   display.display_clear
-  case game
-  when 1
-    jaarix("Congratulations player #{@game_logic.p_player} you are super!!!!!")
-  when 2
-    jaarix("Congratulations player #{@game_logic.p_player} you are super!!!!!")
-  when 3
+  if game == 3
     jaarix('Its a tie, booo no one won!!!!!')
+  else
+    jaarix("Congratulations player #{@game_logic.p_player} you are super!!!!!")
   end
 end
 
