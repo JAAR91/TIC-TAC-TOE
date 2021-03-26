@@ -2,6 +2,9 @@
 
 ## Ruby's TIC TAC TOE
 
+<img src="https://github.com/JAAR91/TIC-TAC-TOE/blob/feature/readme_game_instructions/lib/game_example.gif">
+
+
 > This is a Tic Tac Toe game all made with ruby as a project, the is made to work for 2 players, each player needs to choose on which location they want to add its mark until one of them has 3 marks on a row, and he will be declared the winner.
 
 ## Built With
