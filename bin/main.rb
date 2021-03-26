@@ -1,5 +1,6 @@
-require_relative 'displayprint'
-require_relative 'game'
+#!/usr/bin/env ruby
+require_relative '../lib/displayprint'
+require_relative '../lib/game'
 
 def board_print(arrayboard = nil)
   display = Display.new
