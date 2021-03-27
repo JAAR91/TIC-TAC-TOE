@@ -2,17 +2,13 @@
 
 ## Ruby's TIC TAC TOE
 
-<img src="https://github.com/JAAR91/TIC-TAC-TOE/blob/feature/readme_game_instructions/lib/game_example.gif">
+<img src="lib/game_example.gif">
 
 > This is a Tic Tac Toe game all made with ruby as a project, the is made to work for 2 players, each player needs to choose on which location they want to add its mark until one of them has 3 marks on a row, and he will be declared the winner.
 
 ## Built With
 
 - >Ruby
-
-## Getting Started
-
-> To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
@@ -26,14 +22,26 @@
 
 5. Ruby
 
+## Getting Started
+
+> To get a local copy up and running follow these simple example steps below (from setup - installation).
+
 ### Setup
 
 >Setup by  following the installation instructions below :
 * Open your terminal and locate on the folder you want to clone the repository.
 
+### Install
+
+Run the following command into your terminal:
+
+```console
+git clone git@github.com:JAAR91/Enumerable-Methods.git
+```
+
 ## How to Start the Game
 
-- >After running the Setup right above
+- >After running the Setup and installation right above
 
 - >On the console type bin/main.rb
 
@@ -58,14 +66,6 @@ can be horizontal, vertical or diagonal in both opposite directions. You can onl
 you manage to have O or X cutting across equally either diagonally, horizonatally or 
 vertically, but if  no one can complete a line of 3 O/X THEN it's a tie. When all 9 
 squares are full, the game is over
-```
-
-### Install
-
-Run the following command into your terminal:
-
-```console
-git clone git@github.com:JAAR91/Enumerable-Methods.git
 ```
 
 ### Usage
