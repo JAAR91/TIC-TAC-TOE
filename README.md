@@ -31,6 +31,12 @@
 >Setup by  following the installation instructions below :
 * Open your terminal and locate on the folder you want to clone the repository.
 
+## How to Start the Game
+
+- >After running the Setup right above
+
+- >On the console type bin/main.rb
+
 ## Game rules
 
 ```
@@ -54,11 +60,6 @@ vertically, but if  no one can complete a line of 3 O/X THEN it's a tie. When al
 squares are full, the game is over
 ```
 
-## How to Start the Game
-
-- >After running the Setup right below
-
-- >On the console type bin/main.rb
 ### Install
 
 Run the following command into your terminal:
